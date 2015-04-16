@@ -1,0 +1,73 @@
+*HEADING
+ Uniaxial tension-Cosserat solid
+*NODE
+1, 0.0,0.0
+2, 1.0,0.0
+3, 1.0,1.0
+4, 0.0,1.0
+5, 0.5,0.0
+6, 1.0,0.5
+7, 0.5,1.0
+8, 0.0,0.5
+**
+**
+*NSET,NSET=BOTTOM
+1,2,5
+*NSET,NSET=TOP
+3,4,7
+*NSET, NSET=MIDDLE
+6,8
+*NSET, NSET=EDGES
+3,4,6,8
+*NSET, NSET=ALLNODES
+BOTTOM,TOP,MIDDLE
+**
+**
+***********************************************************************
+***********************************************************************
+*USER ELEMENT,NODES=8,TYPE=U1,PROPERTIES=8,COORDINATES=2,VARIABLES=307
+ 1,2,6
+***********************************************************************
+*ELEMENT,TYPE=U1, ELSET=TODOS
+ 1,1,2,3,4,5,6,7,8
+***************************************************
+**************MATERIAL PROPERTIES******************
+***************************************************
+*UEL PROPERTY,ELSET=TODOS
+42.34E3,0.34,0.005,90000.0,21.77,15.542,383.3,6227.4
+***************************************************
+**
+*BOUNDARY
+BOTTOM,ENCASTRE
+**1,1,2,0.0
+**2,1,2,0.0
+**5,1,2,0.0
+**5,6,6,0.0
+**
+** HISTORY DATA
+**
+*STEP,INC=10000, EXTRAPOLATION=NO
+*STATIC,DIRECT
+0.05,1.0
+*AMPLITUDE,NAME=DIS
+ 0.000, 0.000,1.0,1.0
+***BOUNDARY,AMPLITUDE=DIS
+***TOP,2,2,0.002
+**************
+***************
+*CLOAD
+TOP,2,8.0
+**
+*NODE PRINT,NSET=TOP, FREQUENCY=1
+U1,U2,RF
+*EL PRINT,ELSET=TODOS, POSITION=INTEGRATION POINTS
+SDV1,  sdv2,  SDV3,  SDV4,  SDV7,  SDV8,  sDV9,  SDV10,
+SDV34, sdv35, SDV36, SDV37, SDV40, SDV41, SDV42, SDV43,
+SDV67, sdv68, SDV69, SDV70, SDV73, SDV74, SDV75, SDV76,
+SDV100,sdv101,SDV102,SDV103,SDV106,SDV107,SDV108,SDV109,
+SDV133,sdv134,SDV135,SDV136,SDV139,SDV140,SDV141,SDV142,
+sdv166,SDV167,sdv168,SDV169,SDV172,SDV173,SDV174,SDV175,
+sdv199,SDV200,sdv201,SDV202,SDV205,SDV206,SDV207,SDV208,
+sdv232,SDV233,sdv234,SDV235,SDV238,SDV239,SDV240,SDV241,
+sdv265,SDV266,sdv267,SDV268,SDV271,SDV272,SDV273,SDV274
+*END STEP

@@ -1,0 +1,33 @@
+TETA,E0,E1,G0,G1,SIGY0,SIGY1,CTE
+H',GAMMA,R0,R1,C,A,D0,b,
+k,d,p,n,Q,R,N0,ms,
+l,Ga
+
+---------------------------
+TETA         : Temperature (Kelvin)
+E0,E1        : Parameters to compute temperature dependent Young's modulus==> E(GPa)=E0+E1xTETA
+G0,G1        : Parameters to compute temperature dependent Shear modulus  ==> G(GPa)=G0+G1xTETA
+SIGY0,SIGY1  : Parameters to compute temperature dependent Yield stress  ==>  SIGY(MPa)=SIG0+SIG1xTETA 
+CTE          : Coefficient of thermal expansion. 
+H'        : Kinematic hardening parameter (MPa).
+GAMMA        : Kinematic hardening parameter.
+R0,R1        : Parameters to compute temperature dependent saturation value of Isotropic hardening component===> Rinfi(MPa)=R0+R1xTETA
+C            : Isotropic hardening parameter.
+A            : Rate dependency constant( flow rule) (Dimensionless).
+D0           : Frequency dependent difussion coeffiecient (mm^2/s).
+b            : Burger's vector magnitude (mm).
+k            : Boltzman's constant.
+d            : Average phase size (mm)
+p            : Grain size exponent (dimensionless).
+n            : Stress exponent (dimensionless).
+Q            : Creep activation energy (mJ/mol)
+R            : Universal gas constant.(mJ/molxKelvin)
+N0           : Avogadro's number.
+ms           : Atomic weight (Kg).
+l            : Plastic length scale prameter(mm)
+Ga           : Penalty number
+
+295.1500,52.1000,-0.1059,19.4400,-0.0395,60.0690,-0.14000,0.57E-5
+13.60000,457.900,37.4700,-0.0748,383.300,7.600E9,48.80000,3.18E-7
+1.38E-20,10.6E-3,3.34000,1.67000,44.70E6,8.314E3,6.023E23,20.14E3
+

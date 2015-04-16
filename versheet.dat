@@ -1,0 +1,62 @@
+*PROBLEM---------------------------FILE----------------------------OBSERVATIONS                    USER SUBROUTINE      *
+*                                                                                                                       *
+*************************************************************************************************************************
+Uniaxial extension             UNIUSER_CLA                    UNIAXIAL EXTENSION                    UEL8_PCLI_R.for
+                                                              CLASSICAL PLASTICITY THEORY
+
+Uniaxial extension             UNIUSER_COS                    UNIAXIAL EXTENSION                    UEL8_PCOI.for
+                                                              COSSERAT PLASTICITY THEORY            UEL8_PCOR.for
+                                                              RADIAL RETURN AND RETURN MAPPING
+                                                              ALGORITHMS
+
+Uniaxial extension             UNIUSER9CS                     
+UNIAXIAL EXTENSION             UEL9_PCOI.for                  COSSERAT PLASTICITY THEORY              UEL9_PCOR.for  
+                                                              RADIAL RETURN AND RETURN MAPPING
+                                                              ALGORITHMS 
+
+Uniaxial extension             UNIUSER_CLA_ELA                UNIAXIAL EXTENSION                    UEL8_ECL.for
+                                                              CLASSICAL ELASTICITY                               
+
+Uniaxial extension             UNIUSER_CLA_CAE                UNIAXIAL EXTENSION                    ABAQUS MODEL
+                                                              CLASSICAL ELASTICITY
+
+Uniaxial extension             UNIUSER_COS_ELA                UNIAXIAL EXTENSION                    UEL8_COS.for
+                                                              COSSERAT ELASTICITY
+
+Beam bending                   STOLKEN                        Beam with solid elements              UEL9_PCOI.for
+                                                                                                    UEL9_PCOR.for 
+  
+Uniaxial extension             UNIUSER_CLA_UEL9               UNIAXIAL EXTENSION                    UEL9_PCLK.for
+                                                              Classical plasticity
+                                                              Combined Hardening  
+   
+Uniaxial extension             UNIUSER_CLA_UEL8               UNIAXIAL EXTENSION                    UEL8_PCLK.for
+                                                              Classical plasticity
+                                                              Combined Hardening
+
+Uniaxial extension             UNIUSER_CLA_KIN                UNIAXIAL EXTENSION                    UMAT_PCLK.for
+                                                              Classical plasticity
+                                                              Combined Hardening   
+
+Uniaxial extension             UNIUSER_UEL8                   UNIAXIAL EXTENSION                    UEL8_PCLK.for
+                                                              Classical plasticity
+                                                              Combined Hardening 
+                                                              different boundary conditions      
+
+Uniaxial extension             UNIUSER_COS_KIN                UNIAXIAL EXTENSION                    UEL8_PCOR_KIN.for
+                                                              Cosserat plasticity
+                                                              Combined Hardening
+
+Beam bending                   STOLKEN_CLA                    Beam bending                          UEL9_PCLK.for
+                                                              Classical plasticity
+                                                              Combined Hardening
+
+Beam bending                   STOLKEN_KIN                    UNIAXIAL EXTENSION                    UEL9_PCOR_KIN.for
+                                                             Cosserat plasticity
+                                                             Combined Hardening
+
+Uniaxial extension            UNIAXIAL_AXI_UEL                UNIAXIAL EXTENSION                    UEL8_ECL_AXY.for
+                                                              classical elasticity
+                                                              Axisymmetric formulation 
+                                                                                  
+                                                                                                       

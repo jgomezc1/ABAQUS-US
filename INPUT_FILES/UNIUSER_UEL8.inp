@@ -1,0 +1,71 @@
+*HEADING
+ Uniaxial tension-Cosserat solid
+*NODE
+1, 0.0,0.0
+2, 1.0,0.0
+3, 1.0,1.0
+4, 0.0,1.0
+5, 0.5,0.0
+6, 1.0,0.5
+7, 0.5,1.0
+8, 0.0,0.5
+**
+**
+*NSET,NSET=BOTTOM
+1,2,5
+*NSET,NSET=TOP
+3,4,7
+*NSET, NSET=MIDDLE
+6,8
+*NSET, NSET=EDGES
+3,4,6,8
+*NSET, NSET=ALLNODES
+BOTTOM,TOP,MIDDLE
+**
+**
+***********************************************************************
+***********************************************************************
+*USER ELEMENT,NODES=8,TYPE=U1,PROPERTIES=6,COORDINATES=2,VARIABLES=200
+ 1,2
+***********************************************************************
+*ELEMENT,TYPE=U1, ELSET=TODOS
+ 1,1,2,3,4,5,6,7,8
+***************************************************
+**************MATERIAL PROPERTIES******************
+***************************************************
+*UEL PROPERTY,ELSET=TODOS
+42.34E3,0.34,21.77,15.542,383.3,6227.4
+***************************************************
+***************************************************
+**
+*BOUNDARY
+bottom,encastre
+**1,2,2,0.0
+**2,2,2,0.0
+**5,1,2,0.0
+**
+*STEP,INC=10000, EXTRAPOLATION=NO
+*STATIC,DIRECT
+0.05,1.0
+*AMPLITUDE,NAME=DIS
+ 0.000, 0.000,1.0,1.0
+***BOUNDARY,AMPLITUDE=DIS
+***TOP,2,2,0.002
+**************
+***************
+*CLOAD
+TOP,2,8.0
+**
+*NODE PRINT,NSET=TOP, FREQUENCY=1
+U1,U2,RF
+*EL PRINT,ELSET=TODOS
+SDV1,sdv2,SDV3,SDV4,SDV5,SDV6,SDV7,SDV8,
+sDV23,SDV24,SDV25,SDV26,SDV27,sdv28,SDV29,SDV30,
+SDV45,SDV46,SDV47,SDV48,sDV49,SDV50,SDV51,SDV52,
+SDV67,sdv68,SDV69,SDV70,SDV71,SDV72,SDV73,SDV74,
+sDV89,SDV90,SDV91,SDV92,SDV93,sdv94,SDV95,SDV96,
+SDV111,SDV112,SDV113,SDV114,sDV115,SDV116,SDV117,SDV118,
+SDV133,sdv134,SDV135,SDV136,SDV137,SDV138,SDV139,SDV140,
+sDV155,SDV156,SDV157,SDV158,sdv159,SDV160,sdv161,SDV162,
+SDV177,SDV178,SDV179,SDV180,SDV181,sDV182,SDV183,SDV184
+*END STEP

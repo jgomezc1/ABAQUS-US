@@ -1,0 +1,62 @@
+*HEADING
+ Uniaxial tension-Cosserat solid
+*NODE
+1, 0.0,0.0
+2, 1.0,0.0
+3, 1.0,1.0
+4, 0.0,1.0
+5, 0.5,0.0
+6, 1.0,0.5
+7, 0.5,1.0
+8, 0.0,0.5
+**
+**
+*NSET,NSET=BOTTOM
+1,2,5
+*NSET,NSET=TOP
+3,4,7
+*NSET, NSET=MIDDLE
+6,8
+*NSET, NSET=EDGES
+3,4,6,8
+*NSET, NSET=ALLNODES
+BOTTOM,TOP,MIDDLE
+**
+**
+***************************************************
+*Element, type=CPE8,ELSET=TODOS
+ 1,1,2,3,4,5,6,7,8
+***************************************************
+**************MATERIAL PROPERTIES******************
+***************************************************
+*SOLID SECTION,ELSET=TODOS,MATERIAL=STOLKEN
+*MATERIAL, NAME=STOLKEN
+*USER MATERIAL,CONSTANTS=6
+42.34E3,0.342,21.77,15.54,383.3,6227.4
+*DEPVAR
+14
+***************************************************
+***************************************************
+**
+*BOUNDARY
+1,2,2,0.0
+2,2,2,0.0
+5,1,2,0.0
+**
+*STEP,INC=10000, EXTRAPOLATION=NO
+*STATIC,DIRECT
+0.05,1.0
+*AMPLITUDE,NAME=DIS
+ 0.000, 0.000,1.0,1.0
+***BOUNDARY,AMPLITUDE=DIS
+***TOP,2,2,0.002
+**************
+***************
+*CLOAD
+TOP,2,8.0
+**
+*NODE PRINT,NSET=TOP, FREQUENCY=1
+U1,U2,RF
+*EL PRINT,ELSET=TODOS, POSITION=INTEGRATION POINTS
+S,E
+*END STEP
