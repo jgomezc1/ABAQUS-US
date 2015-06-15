@@ -9,11 +9,14 @@ This REPO contains a variety of ABAQUS user element (UEL) and user material (UMA
 Download the subroutines and run the Abaqus with the input file (`.inp`) that accompanies the subroutines.
 
     abaqus job=filename user=user_routine
+	
+The list of cases is presented in this [table](./versheet.md)
 
 ### Example
 This is a uniaxial test with classical plasticity
 
     abaqus job=UNIUSER_CLA_KIN user=UMAT_PCLK
 
+	
 ## License
 It is licensed under the [MIT license](http://en.wikipedia.org/wiki/MIT_License).
